@@ -1,11 +1,5 @@
 # Starter pipeline
-- task: aqciconnect@0
-  inputs:
-    appURL: 'https://poc.accelq.io'
-    userName: 'sakshamagarwal@lambdatest.com'
-    apiKey: 't0ZHUISWc03HVQ_eNVJRDm32bflqM8a9xWPET2-9SZw'
-    tenantCode: 'poc'
-    jobId: '66564'
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -16,11 +10,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
+- task: aqciconnect@0
+  inputs:
+    appURL: 'https://poc.accelq.io'
+    userName: 'sakshamagarwal@lambdatest.com'
+    apiKey: 't0ZHUISWc03HVQ_eNVJRDm32bflqM8a9xWPET2-9SZw'
+    tenantCode: 'poc'
+    jobId: '66564'
